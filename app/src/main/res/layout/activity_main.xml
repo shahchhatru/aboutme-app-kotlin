@@ -1,38 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    >
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="@dimen/small_gap"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
+        style="@style/myStlye1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/name"
         android:textAlignment="center"
-        style="@style/myStlye1" />
+        app:fontFamily="@font/carrois_gothic" />
 
     <EditText
-        android:id="@+id/nice_name"
+        android:id="@+id/nickName_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/enter_name"
         android:inputType="textPersonName"
         android:text=""
-        style="@style/myStlye1"/>
+        style="@style/myStlye1"
+        app:fontFamily="@font/carrois_gothic"
+        />
+
+    <Button
+        android:id="@+id/done_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        style="@style/Widget.AppCompat.Button"
+
+        android:text="@string/done_butt" />
 
     <ImageView
         android:id="@+id/avatar"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="200dp"
 
         android:contentDescription="@string/image_of_the_jasoos"
 
         app:srcCompat="@drawable/imgprof" />
+
+    <TextView
+        android:id="@+id/nickName_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        style="@style/myStlye1"
+
+
+        />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -44,6 +71,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/bio"
+            app:fontFamily="@font/carrois_gothic"
             style="@style/myStlye1" />
     </ScrollView>
 </LinearLayout>
+</layout>
