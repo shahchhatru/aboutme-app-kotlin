@@ -14,12 +14,14 @@ import com.example.aboutme.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     //let's create a variable for binding operations
     private lateinit var binding:ActivityMainBinding
+    private val myName:MyName=MyName("chhatra")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
         //let's bind our data and main activity
         binding=DataBindingUtil.setContentView(this,R.layout.activity_main)
-
+        binding.myName=myName
       /*  val btn=findViewById<Button>(R.id.done_button)
         btn.setOnClickListener {
             addNickName(it)
@@ -37,22 +39,24 @@ class MainActivity : AppCompatActivity() {
         view.visibility=View.GONE
         nickNameTextView.visibility=View.VISIBLE
         */
-        binding.nickNameText.text=binding.nickNameEdit.text
+        //binding.nickNameText.text=binding.nickNameEdit.text
+       /* binding.myName?.nickname=binding.nickNameEdit.text.toString()
         binding.nickNameEdit.visibility=View.GONE
         view.visibility=View.GONE
-        binding.nickNameText.visibility=View.VISIBLE
+        binding.nickNameText.visibility=View.VISIBLE*/
         //also below given method can do same funcitionality as above
         //code
-        /*
+
         binding.apply {
-            nickNameText.text=binding.nickNameEdit.text
+            //nickNameText.text=binding.nickNameEdit.text
+            myName?.nickname=nickNameEdit.text.toString()
             invalidateAll()
            nickNameEdit.visibility=View.GONE
 
             nickNameText.visibility=View.VISIBLE
         }
         view.visibility=View.GONE
-        */
+
         val imm=getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view.windowToken,0)
 
